@@ -1,0 +1,62 @@
+#-------------------------
+# Rahasia dan konfigurasi lokal
+#-------------------------
+.env
+*.env
+!env
+akun*.txt
+*.pem
+*.key
+
+#-------------------------
+# Dependensi (dipasang ulang dengan "composer install")
+#-------------------------
+/vendor/
+
+#-------------------------
+# Data yang dibuat saat aplikasi berjalan
+#-------------------------
+writable/cache/*
+!writable/cache/index.html
+
+writable/debugbar/*
+!writable/debugbar/.gitkeep
+
+writable/logs/*
+!writable/logs/index.html
+
+writable/session/*
+!writable/session/index.html
+
+writable/uploads/*
+!writable/uploads/index.html
+
+#-------------------------
+# Cadangan dan dump database
+#-------------------------
+*.sql
+*.sql.gz
+*.bak
+
+#-------------------------
+# Pengujian
+#-------------------------
+.phpunit.result.cache
+/results/
+/build/
+phpunit.xml
+
+#-------------------------
+# Editor dan sistem operasi
+#-------------------------
+.vscode/
+.idea/
+*.swp
+*.DS_Store
+Thumbs.db
+desktop.ini
+
+#-------------------------
+# File reset akun sementara
+#-------------------------
+/reset_dosen.php

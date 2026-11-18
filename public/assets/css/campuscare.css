@@ -1,0 +1,1069 @@
+/* ==========================================================
+   CampusCare - Design System
+   Dimuat SETELAH Bootstrap agar dapat menimpa nilai bawaannya.
+   ========================================================== */
+
+:root {
+  /* --- Warna --- */
+  --cc-primary: #1D4ED8;
+  --cc-primary-hover: #1E40AF;
+  --cc-primary-active: #1E3A8A;
+  --cc-primary-soft: #DBEAFE;
+
+  --cc-success: #15803D;
+  --cc-success-soft: #DCFCE7;
+  --cc-success-text: #166534;
+
+  --cc-warning-soft: #FEF3C7;
+  --cc-warning-text: #92400E;
+
+  --cc-danger: #B91C1C;
+  --cc-danger-soft: #FEE2E2;
+  --cc-danger-text: #991B1B;
+
+  --cc-info-text: #1E3A8A;
+
+  --cc-bg: #F3F4F6;
+  --cc-surface: #FFFFFF;
+  --cc-text: #111827;
+  --cc-text-muted: #4B5563;
+  --cc-border: #D1D5DB;
+
+  /* --- Tipografi --- */
+  --cc-font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --cc-fs-h1: 2rem;
+  --cc-fs-h2: 1.5rem;
+  --cc-fs-h3: 1.25rem;
+  --cc-fs-body: 1rem;
+  --cc-fs-caption: 0.875rem;
+
+  /* --- Spasi (skala 4px) --- */
+  --cc-space-1: 0.25rem;
+  --cc-space-2: 0.5rem;
+  --cc-space-3: 0.75rem;
+  --cc-space-4: 1rem;
+  --cc-space-6: 1.5rem;
+  --cc-space-8: 2rem;
+  --cc-space-12: 3rem;
+
+  /* --- Bentuk --- */
+  --cc-radius-md: 8px;
+  --cc-radius-lg: 12px;
+  --cc-shadow-card: 0 1px 3px rgba(17, 24, 39, 0.08), 0 1px 2px rgba(17, 24, 39, 0.06);
+
+  /* --- Pemetaan ke variabel Bootstrap --- */
+  --bs-primary: #1D4ED8;
+  --bs-primary-rgb: 29, 78, 216;
+  --bs-body-font-family: var(--cc-font);
+  --bs-body-font-size: var(--cc-fs-body);
+  --bs-body-color: var(--cc-text);
+  --bs-body-bg: var(--cc-bg);
+  --bs-border-color: var(--cc-border);
+  --bs-link-color: #1D4ED8;
+  --bs-link-color-rgb: 29, 78, 216;
+  --bs-link-hover-color: #1E40AF;
+  --bs-link-hover-color-rgb: 30, 64, 175;
+}
+
+/* --- Dasar --- */
+body {
+  line-height: 1.6;
+}
+
+h1, .h1 { font-size: var(--cc-fs-h1); font-weight: 700; line-height: 1.2; }
+h2, .h2 { font-size: var(--cc-fs-h2); font-weight: 600; line-height: 1.3; }
+h3, .h3 { font-size: var(--cc-fs-h3); font-weight: 600; line-height: 1.4; }
+
+.cc-caption {
+  font-size: var(--cc-fs-caption);
+  color: var(--cc-text-muted);
+}
+
+.text-muted-cc { color: var(--cc-text-muted); }
+
+/* --- Fokus keyboard (aksesibilitas) --- */
+:focus-visible {
+  outline: 3px solid var(--cc-primary);
+  outline-offset: 2px;
+}
+
+/* --- Skip link --- */
+.skip-link {
+  position: absolute;
+  left: var(--cc-space-4);
+  top: -100px;
+  z-index: 2000;
+  padding: var(--cc-space-3) var(--cc-space-4);
+  background: var(--cc-primary);
+  color: #fff;
+  font-weight: 600;
+  border-radius: var(--cc-radius-md);
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: var(--cc-space-4);
+  color: #fff;
+}
+
+main:focus { outline: none; }
+
+/* --- Button --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--cc-space-2);
+  min-height: 44px;
+  padding: 0.625rem 1.25rem;
+  font-weight: 600;
+  border-radius: var(--cc-radius-md);
+}
+.btn-lg {
+  min-height: 52px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.0625rem;
+}
+
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--cc-primary);
+  --bs-btn-border-color: var(--cc-primary);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--cc-primary-hover);
+  --bs-btn-hover-border-color: var(--cc-primary-hover);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--cc-primary-active);
+  --bs-btn-active-border-color: var(--cc-primary-active);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--cc-primary);
+  --bs-btn-border-color: var(--cc-primary);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--cc-primary);
+  --bs-btn-hover-border-color: var(--cc-primary);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--cc-primary-hover);
+  --bs-btn-active-border-color: var(--cc-primary-hover);
+}
+
+.btn-light {
+  --bs-btn-color: var(--cc-primary);
+  --bs-btn-bg: #fff;
+  --bs-btn-border-color: #fff;
+  --bs-btn-hover-color: var(--cc-primary-hover);
+  --bs-btn-hover-bg: var(--cc-primary-soft);
+  --bs-btn-hover-border-color: var(--cc-primary-soft);
+}
+
+/* --- Navbar --- */
+.cc-navbar {
+  background: var(--cc-surface);
+  border-bottom: 1px solid var(--cc-border);
+}
+.cc-navbar .navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--cc-space-2);
+  font-weight: 700;
+  color: var(--cc-primary);
+}
+.cc-navbar .nav-link {
+  padding: var(--cc-space-3) var(--cc-space-4);
+  font-weight: 500;
+  color: var(--cc-text);
+}
+.cc-navbar .nav-link:hover {
+  color: var(--cc-primary);
+}
+/* Halaman aktif ditandai warna + garis bawah + teks tebal (bukan warna saja) */
+.cc-navbar .nav-link[aria-current="page"] {
+  color: var(--cc-primary);
+  font-weight: 700;
+  box-shadow: inset 0 -3px 0 var(--cc-primary);
+}
+
+/* --- Hero --- */
+.cc-hero {
+  padding: 4rem 0;
+  background: linear-gradient(180deg, var(--cc-primary-soft) 0%, var(--cc-bg) 100%);
+}
+.cc-eyebrow {
+  margin-bottom: var(--cc-space-3);
+  font-size: var(--cc-fs-caption);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--cc-primary);
+}
+/* Varian "display" khusus hero: H1 lebih besar di layar lebar */
+.cc-hero__title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+.cc-hero__lead {
+  max-width: 36rem;
+  font-size: 1.125rem;
+  color: var(--cc-text-muted);
+}
+
+/* --- Section --- */
+.cc-section { padding: 4rem 0; }
+.cc-section--white { background: var(--cc-surface); }
+.cc-section__intro {
+  max-width: 40rem;
+  margin-bottom: var(--cc-space-8);
+  color: var(--cc-text-muted);
+}
+
+/* --- Card --- */
+.cc-card {
+  height: 100%;
+  padding: var(--cc-space-6);
+  background: var(--cc-surface);
+  border: 1px solid var(--cc-border);
+  border-radius: var(--cc-radius-lg);
+  box-shadow: var(--cc-shadow-card);
+}
+.cc-card p:last-child { margin-bottom: 0; }
+
+.cc-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: var(--cc-space-4);
+  font-size: 1.5rem;
+  color: var(--cc-primary);
+  background: var(--cc-primary-soft);
+  border-radius: var(--cc-radius-md);
+}
+
+.cc-step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-bottom: var(--cc-space-3);
+  font-weight: 700;
+  color: #fff;
+  background: var(--cc-primary);
+  border-radius: 50%;
+}
+
+/* --- Badge status (ikon + teks + warna) --- */
+.cc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.75rem;
+  font-size: var(--cc-fs-caption);
+  font-weight: 600;
+  line-height: 1.4;
+  border: 1px solid transparent;
+  border-radius: 999px;
+}
+.cc-badge--waiting    { background: var(--cc-warning-soft); color: var(--cc-warning-text); border-color: #FCD34D; }
+.cc-badge--processing { background: var(--cc-primary-soft); color: var(--cc-info-text);    border-color: #93C5FD; }
+.cc-badge--done       { background: var(--cc-success-soft); color: var(--cc-success-text); border-color: #86EFAC; }
+.cc-badge--rejected   { background: var(--cc-danger-soft);  color: var(--cc-danger-text);  border-color: #FCA5A5; }
+
+/* --- Pratinjau kartu laporan di hero (dekoratif) --- */
+.cc-mock {
+  padding: var(--cc-space-6);
+  background: var(--cc-surface);
+  border: 1px solid var(--cc-border);
+  border-radius: var(--cc-radius-lg);
+  box-shadow: 0 10px 30px rgba(17, 24, 39, 0.12);
+}
+.cc-mock__timeline {
+  margin: var(--cc-space-4) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.cc-mock__timeline li {
+  display: flex;
+  gap: var(--cc-space-3);
+  padding: var(--cc-space-2) 0;
+  font-size: var(--cc-fs-caption);
+  color: var(--cc-text-muted);
+}
+.cc-mock__timeline i { color: var(--cc-success); }
+.cc-mock__timeline .is-pending i { color: var(--cc-border); }
+
+/* --- CTA --- */
+.cc-cta {
+  padding: 4rem 0;
+  color: #fff;
+  background: var(--cc-primary);
+}
+.cc-cta p { color: #DBEAFE; }
+
+/* --- Footer --- */
+.cc-footer {
+  padding: var(--cc-space-12) 0 var(--cc-space-8);
+  color: #D1D5DB;
+  background: var(--cc-text);
+}
+.cc-footer a { color: #fff; }
+.cc-footer .navbar-brand-text { font-weight: 700; color: #fff; }
+
+/* --- Gerak dikurangi --- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+
+html { scroll-behavior: smooth; }
+/* Agar judul section tidak tertutup saat lompat lewat anchor */
+section[id] { scroll-margin-top: 1rem; }
+/* ==========================================================
+   Tahap 7: Form, Alert, dan Halaman Autentikasi
+   ========================================================== */
+
+:root {
+  /* Border komponen input: kontras 3:1 ke atas (WCAG 1.4.11) */
+  --cc-border-strong: #6B7280;
+}
+
+/* --- Form --- */
+.cc-label {
+  margin-bottom: var(--cc-space-2);
+  font-weight: 600;
+  color: var(--cc-text);
+}
+.cc-required {
+  margin-left: 0.125rem;
+  color: var(--cc-danger-text);
+}
+.cc-hint {
+  margin: var(--cc-space-2) 0 0;
+  font-size: var(--cc-fs-caption);
+  color: var(--cc-text-muted);
+}
+
+.form-control {
+  min-height: 44px;
+  padding: 0.625rem 0.875rem;
+  color: var(--cc-text);
+  background-color: var(--cc-surface);
+  border: 1px solid var(--cc-border-strong);
+  border-radius: var(--cc-radius-md);
+}
+.form-control::placeholder { color: var(--cc-text-muted); opacity: 1; }
+.form-control:focus {
+  border-color: var(--cc-primary);
+  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.25);
+}
+.form-control.is-invalid {
+  padding-right: 0.875rem;
+  background-image: none;           /* ikon error ditampilkan di pesan, bukan di dalam input */
+  border-color: var(--cc-danger);
+}
+.form-control.is-invalid:focus {
+  box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.25);
+}
+
+.cc-field-error {
+  display: flex;
+  gap: 0.375rem;
+  margin: var(--cc-space-2) 0 0;
+  font-size: var(--cc-fs-caption);
+  font-weight: 500;
+  color: var(--cc-danger-text);
+}
+.cc-field-error i { flex: none; margin-top: 0.125rem; }
+
+.cc-toggle-password {
+  min-width: 44px;
+  color: var(--cc-text-muted);
+  background: var(--cc-surface);
+  border: 1px solid var(--cc-border-strong);
+}
+.cc-toggle-password:hover {
+  color: var(--cc-text);
+  background: var(--cc-bg);
+}
+.cc-toggle-password[aria-pressed="true"] {
+  color: var(--cc-primary);
+  background: var(--cc-primary-soft);
+}
+
+/* --- Alert (ikon + teks + warna) --- */
+.cc-alert {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: var(--cc-space-4);
+  padding: 0.875rem 1rem;
+  font-size: 0.9375rem;
+  border: 1px solid;
+  border-radius: var(--cc-radius-md);
+}
+.cc-alert__icon { flex: none; font-size: 1.25rem; line-height: 1.4; }
+.cc-alert__title { margin: 0 0 0.25rem; font-size: 1rem; font-weight: 700; }
+.cc-alert p { margin: 0; }
+.cc-alert ul { margin: 0.25rem 0 0; padding-left: 1.25rem; }
+.cc-alert a { color: inherit; font-weight: 600; text-decoration: underline; }
+
+.cc-alert--success { background: var(--cc-success-soft); color: var(--cc-success-text); border-color: #86EFAC; }
+.cc-alert--danger  { background: var(--cc-danger-soft);  color: var(--cc-danger-text);  border-color: #FCA5A5; }
+.cc-alert--warning { background: var(--cc-warning-soft); color: var(--cc-warning-text); border-color: #FCD34D; }
+.cc-alert--info    { background: var(--cc-primary-soft); color: var(--cc-info-text);    border-color: #93C5FD; }
+
+/* --- Halaman autentikasi --- */
+.cc-auth { padding: 3rem 0 4rem; }
+.cc-auth__card {
+  max-width: 30rem;
+  margin: 0 auto;
+  padding: var(--cc-space-8);
+  background: var(--cc-surface);
+  border: 1px solid var(--cc-border);
+  border-radius: var(--cc-radius-lg);
+  box-shadow: var(--cc-shadow-card);
+}
+.cc-auth__card--wide { max-width: 34rem; }
+.cc-auth__footer {
+  margin: var(--cc-space-6) 0 0;
+  padding-top: var(--cc-space-4);
+  text-align: center;
+  border-top: 1px solid var(--cc-border);
+}
+
+@media (max-width: 575.98px) {
+  .cc-auth { padding: 1.5rem 0 3rem; }
+  .cc-auth__card { padding: var(--cc-space-6); }
+}
+/* ==========================================================
+   Tahap 8: Dashboard Mahasiswa
+   ========================================================== */
+
+/* --- Halaman area aplikasi --- */
+.cc-page { padding: 2rem 0 4rem; }
+.cc-page__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cc-space-4);
+  margin-bottom: var(--cc-space-8);
+}
+.cc-page__header h1 { margin: 0; }
+
+.cc-badge--neutral {
+  background: var(--cc-bg);
+  color: var(--cc-text);
+  border-color: var(--cc-border-strong);
+}
+
+/* --- Kartu statistik --- */
+.cc-stat {
+  display: flex;
+  align-items: center;
+  gap: var(--cc-space-4);
+  height: 100%;
+  padding: var(--cc-space-4) var(--cc-space-6);
+  background: var(--cc-surface);
+  border: 1px solid var(--cc-border);
+  border-radius: var(--cc-radius-lg);
+  box-shadow: var(--cc-shadow-card);
+}
+.cc-stat__icon {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+  border-radius: var(--cc-radius-md);
+}
+.cc-stat__label {
+  margin: 0;
+  font-size: var(--cc-fs-caption);
+  font-weight: 600;
+  color: var(--cc-text-muted);
+}
+.cc-stat__value {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+.cc-stat__note {
+  margin: 0.25rem 0 0;
+  font-size: var(--cc-fs-caption);
+  color: var(--cc-text-muted);
+}
+.cc-stat--total      .cc-stat__icon { background: var(--cc-primary-soft); color: var(--cc-info-text); }
+.cc-stat--waiting    .cc-stat__icon { background: var(--cc-warning-soft); color: var(--cc-warning-text); }
+.cc-stat--processing .cc-stat__icon { background: var(--cc-primary-soft); color: var(--cc-info-text); }
+.cc-stat--done       .cc-stat__icon { background: var(--cc-success-soft); color: var(--cc-success-text); }
+
+@media (max-width: 575.98px) {
+  .cc-stat {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--cc-space-2);
+    padding: var(--cc-space-4);
+  }
+}
+
+/* --- Panel, tabel, dan daftar laporan --- */
+.cc-panel {
+  overflow: hidden;
+  background: var(--cc-surface);
+  border: 1px solid var(--cc-border);
+  border-radius: var(--cc-radius-lg);
+  box-shadow: var(--cc-shadow-card);
+}
+
+.cc-table { margin: 0; --bs-table-bg: transparent; }
+.cc-table th {
+  padding: 0.75rem 1rem;
+  font-size: var(--cc-fs-caption);
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--cc-text-muted);
+  background: #F9FAFB;
+  border-bottom: 1px solid var(--cc-border);
+}
+.cc-table td {
+  padding: 0.875rem 1rem;
+  vertical-align: middle;
+  border-color: var(--cc-border);
+}
+.cc-table tbody tr:hover { background: #F9FAFB; }
+.cc-table__title { margin: 0; font-weight: 600; }
+.cc-table__sub {
+  margin: 0;
+  font-size: var(--cc-fs-caption);
+  color: var(--cc-text-muted);
+}
+
+.cc-report-list { margin: 0; padding: 0; list-style: none; }
+.cc-report-item {
+  padding: var(--cc-space-4);
+  border-bottom: 1px solid var(--cc-border);
+}
+.cc-report-item:last-child { border-bottom: 0; }
+.cc-report-item__title { margin: 0 0 0.25rem; font-weight: 600; }
+.cc-report-item__meta {
+  margin: 0 0 0.75rem;
+  font-size: var(--cc-fs-caption);
+  color: var(--cc-text-muted);
+}
+
+/* --- Empty state --- */
+.cc-empty { padding: 3rem 1.5rem; text-align: center; }
+.cc-empty__icon { font-size: 2.5rem; color: var(--cc-text-muted); }
+/* ==========================================================
+   Tahap 9: Form Laporan
+   ========================================================== */
+
+.cc-form-card {
+  max-width: 44rem;
+  padding: var(--cc-space-8);
+  background: var(--cc-surface);
+  border: 1px solid var(--cc-border);
+  border-radius: var(--cc-radius-lg);
+  box-shadow: var(--cc-shadow-card);
+}
+
+textarea.form-control {
+  min-height: 9rem;
+  resize: vertical;
+}
+
+/* Select diselaraskan dengan input; padding kanan dibiarkan agar panah tidak tertimpa */
+.form-select {
+  min-height: 44px;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  color: var(--cc-text);
+  background-color: var(--cc-surface);
+  border: 1px solid var(--cc-border-strong);
+  border-radius: var(--cc-radius-md);
+}
+.form-select:focus {
+  border-color: var(--cc-primary);
+  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.25);
+}
+.form-select.is-invalid { border-color: var(--cc-danger); }
+
+/* Penghitung karakter (teks, bukan warna saja) */
+.cc-counter {
+  flex: none;
+  margin: var(--cc-space-2) 0 0;
+  font-size: var(--cc-fs-caption);
+  color: var(--cc-text-muted);
+  white-space: nowrap;
+}
+.cc-counter.is-over {
+  font-weight: 700;
+  color: var(--cc-danger-text);
+}
+
+/* Pratinjau foto */
+.cc-photo-preview {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--cc-space-4);
+  margin-top: var(--cc-space-3);
+  padding: var(--cc-space-3);
+  background: #F9FAFB;
+  border: 1px dashed var(--cc-border-strong);
+  border-radius: var(--cc-radius-md);
+}
+.cc-photo-preview img {
+  max-width: 160px;
+  max-height: 120px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Tombol aksi form */
+.cc-form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cc-space-3);
+  margin-top: var(--cc-space-6);
+  padding-top: var(--cc-space-4);
+  border-top: 1px solid var(--cc-border);
+}
+.cc-form-actions .btn { flex: 1 1 100%; }
+
+@media (min-width: 576px) {
+  .cc-form-actions .btn { flex: 0 0 auto; }
+}
+
+@media (max-width: 575.98px) {
+  .cc-form-card { padding: var(--cc-space-6); }
+  .cc-photo-preview { flex-direction: column; }
+}
+
+/* ==========================================================
+   Tahap 10: Laporan Saya, Detail Laporan, Profil
+   ========================================================== */
+
+/* Input hanya-baca (NIM) */
+.form-control[readonly] {
+  background-color: var(--cc-bg);
+  cursor: default;
+}
+
+.cc-form-card + .cc-form-card { margin-top: var(--cc-space-6); }
+
+/* Tautan kembali */
+.cc-back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--cc-space-2);
+  min-height: 44px;
+  margin-bottom: var(--cc-space-2);
+  font-weight: 600;
+}
+
+/* --- Filter laporan --- */
+.cc-filter {
+  margin-bottom: var(--cc-space-6);
+  padding: var(--cc-space-4) var(--cc-space-6);
+  background: var(--cc-surface);
+  border: 1px solid var(--cc-border);
+  border-radius: var(--cc-radius-lg);
+  box-shadow: var(--cc-shadow-card);
+}
+.cc-filter .form-label { margin-bottom: 0.375rem; }
+
+.cc-result-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  margin-bottom: var(--cc-space-3);
+}
+
+/* --- Pagination --- */
+.pagination {
+  --bs-pagination-color: var(--cc-primary);
+  --bs-pagination-hover-color: var(--cc-primary-hover);
+  --bs-pagination-hover-bg: var(--cc-primary-soft);
+  --bs-pagination-focus-color: var(--cc-primary-hover);
+  --bs-pagination-active-bg: var(--cc-primary);
+  --bs-pagination-active-border-color: var(--cc-primary);
+  --bs-pagination-border-color: var(--cc-border-strong);
+  --bs-pagination-disabled-color: var(--cc-text-muted);
+  gap: 0.25rem;
+}
+.pagination .page-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  font-weight: 600;
+  border-radius: var(--cc-radius-md) !important;
+}
+.pagination .page-item:not(:first-child) .page-link { margin-left: 0; }
+
+/* --- Daftar definisi (detail laporan) --- */
+.cc-dl {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.25rem 1.5rem;
+  margin: 0 0 var(--cc-space-6);
+}
+.cc-dl dt {
+  font-size: var(--cc-fs-caption);
+  font-weight: 600;
+  color: var(--cc-text-muted);
+}
+.cc-dl dd { margin: 0 0 var(--cc-space-3); }
+
+@media (min-width: 576px) {
+  .cc-dl { grid-template-columns: 10rem 1fr; gap: var(--cc-space-3) 1.5rem; }
+  .cc-dl dd { margin: 0; }
+}
+
+.cc-detail-photo img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--cc-border);
+  border-radius: var(--cc-radius-md);
+}
+
+/* --- Timeline riwayat status --- */
+.cc-timeline { margin: 0; padding: 0; list-style: none; }
+.cc-timeline__item {
+  position: relative;
+  padding: 0 0 var(--cc-space-6) 2rem;
+}
+.cc-timeline__item:last-child { padding-bottom: 0; }
+.cc-timeline__item::before {            /* garis penghubung */
+  content: "";
+  position: absolute;
+  top: 1.75rem;
+  bottom: -0.25rem;
+  left: 0.5rem;
+  width: 2px;
+  background: var(--cc-border);
+}
+.cc-timeline__item:last-child::before { display: none; }
+.cc-timeline__dot {
+  position: absolute;
+  top: 0.3rem;
+  left: 0;
+  width: 1.125rem;
+  height: 1.125rem;
+  background: var(--cc-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px var(--cc-surface);
+}
+.cc-timeline__item.is-pending .cc-timeline__dot {
+  background: var(--cc-surface);
+  border: 2px solid var(--cc-border-strong);
+}
+.cc-timeline__time {
+  margin: 0.25rem 0 0;
+  font-size: var(--cc-fs-caption);
+  color: var(--cc-text-muted);
+}
+.cc-timeline__note { margin: 0.25rem 0 0; }
+.cc-timeline__current {
+  margin-left: 0.375rem;
+  font-size: var(--cc-fs-caption);
+  font-weight: 700;
+  color: var(--cc-primary);
+}
+.cc-timeline__pending {
+  margin: 0;
+  font-size: var(--cc-fs-caption);
+  color: var(--cc-text-muted);
+}
+/* ==========================================================
+  Tahap 11: Layout dan Dashboard Admin
+   ========================================================== */
+
+/* --- Kerangka halaman admin --- */
+.cc-admin-shell { display: flex; min-height: 100vh; }
+.cc-admin-main {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: 0;               /* mencegah tabel melebarkan halaman */
+}
+.cc-admin-main > main { flex: 1 0 auto; }
+
+/* --- Top bar (hanya layar kecil) --- */
+.cc-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  display: flex;
+  align-items: center;
+  gap: var(--cc-space-3);
+  padding: 0.5rem 1rem;
+  background: var(--cc-surface);
+  border-bottom: 1px solid var(--cc-border);
+}
+.cc-topbar .btn { min-width: 44px; padding: 0.5rem; }
+
+/* --- Sidebar --- */
+.cc-sidebar__panel {
+  --bs-offcanvas-width: 17rem;
+  --bs-offcanvas-bg: var(--cc-surface);
+}
+.cc-sidebar__content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  padding: 0 1rem 1rem;
+}
+.cc-sidebar__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--cc-space-2);
+  margin-bottom: var(--cc-space-6);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--cc-primary);
+  text-decoration: none;
+}
+.cc-sidebar__label {
+  margin: 0 0 var(--cc-space-2);
+  font-size: var(--cc-fs-caption);
+  color: var(--cc-text-muted);
+}
+.cc-sidebar__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.cc-sidebar__link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 44px;
+  padding: 0.5rem 0.75rem;
+  font-weight: 500;
+  color: var(--cc-text);
+  text-decoration: none;
+  border-left: 4px solid transparent;
+  border-radius: var(--cc-radius-md);
+}
+.cc-sidebar__link:hover {
+  color: var(--cc-primary);
+  background: var(--cc-bg);
+}
+/* Halaman aktif: warna + garis tepi + teks tebal (bukan warna saja) */
+.cc-sidebar__link[aria-current="page"] {
+  font-weight: 700;
+  color: var(--cc-primary);
+  background: var(--cc-primary-soft);
+  border-left-color: var(--cc-primary);
+}
+.cc-sidebar__footer {
+  margin-top: auto;
+  padding-top: var(--cc-space-6);
+}
+
+@media (min-width: 992px) {
+  .cc-sidebar {
+    flex: 0 0 16rem;
+    width: 16rem;
+    background: var(--cc-surface);
+    border-right: 1px solid var(--cc-border);
+  }
+  .cc-sidebar__inner {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  .cc-sidebar__content { min-height: 100vh; padding-top: 1.25rem; }
+}
+
+/* --- Panel dasbor admin --- */
+.cc-admin-panel {
+  height: 100%;
+  padding: var(--cc-space-6);
+  background: var(--cc-surface);
+  border: 1px solid var(--cc-border);
+  border-radius: var(--cc-radius-lg);
+  box-shadow: var(--cc-shadow-card);
+}
+
+/* --- Grafik batang (HTML + CSS) --- */
+.cc-bars { margin: 0; padding: 0; list-style: none; }
+.cc-bars__row {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr 3.5rem;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+}
+.cc-bars__label { font-weight: 500; }
+.cc-bars__track {
+  height: 1rem;
+  overflow: hidden;
+  background: var(--cc-bg);
+  border-radius: 999px;
+}
+.cc-bars__fill {
+  display: block;
+  height: 100%;
+  background: var(--cc-primary);
+  border-radius: 999px;
+}
+.cc-bars__fill--success { background: var(--cc-success); }
+.cc-bars__value { font-weight: 700; text-align: right; }
+
+@media (max-width: 575.98px) {
+  .cc-bars__row { grid-template-columns: 1fr auto; gap: 0.25rem 0.75rem; }
+  .cc-bars__label { grid-column: 1 / -1; }
+}
+
+/* --- Tabel alternatif grafik --- */
+.cc-details summary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 600;
+  color: var(--cc-primary);
+  cursor: pointer;
+}
+.cc-details[open] summary { margin-bottom: var(--cc-space-2); }
+
+/* --- Daftar distribusi status --- */
+.cc-status-list { margin: 0; padding: 0; list-style: none; }
+.cc-status-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cc-space-3);
+  padding: 0.625rem 0;
+  border-bottom: 1px solid var(--cc-border);
+}
+.cc-status-list li:last-child { border-bottom: 0; }
+.cc-status-list__count { font-weight: 600; }
+/* ==========================================================
+  Tahap 12A: Pengelolaan Laporan (Admin)
+   ========================================================== */
+
+/* Tombol bahaya (merah gelap agar kontras teks putih memenuhi WCAG AA) */
+.btn-danger {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--cc-danger);
+  --bs-btn-border-color: var(--cc-danger);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #991B1B;
+  --bs-btn-hover-border-color: #991B1B;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #7F1D1D;
+  --bs-btn-active-border-color: #7F1D1D;
+}
+.btn-outline-danger {
+  --bs-btn-color: var(--cc-danger);
+  --bs-btn-border-color: var(--cc-danger);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--cc-danger);
+  --bs-btn-hover-border-color: var(--cc-danger);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #991B1B;
+  --bs-btn-active-border-color: #991B1B;
+}
+
+.modal-content { border-radius: var(--cc-radius-lg); }
+.modal-header, .modal-footer { border-color: var(--cc-border); }
+
+/* Tombol aksi di panel tindakan */
+.cc-action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cc-space-3);
+  margin-top: var(--cc-space-4);
+}
+.cc-action-buttons .btn { flex: 1 1 auto; }
+
+.cc-final-note {
+  display: flex;
+  gap: var(--cc-space-3);
+  margin: 0;
+  color: var(--cc-text-muted);
+}
+.cc-final-note i { flex: none; font-size: 1.25rem; }
+/* ==========================================================
+  Tahap 12B: Kategori, Petugas, Statistik, Pengaturan
+   ========================================================== */
+
+/* Kartu statistik: variasi untuk laporan ditolak */
+.cc-stat--rejected .cc-stat__icon {
+  background: var(--cc-danger-soft);
+  color: var(--cc-danger-text);
+}
+
+/* Warna batang grafik per status (selalu disertai label teks dan angka) */
+.cc-bars__fill--warning { background: #B45309; }
+.cc-bars__fill--danger  { background: var(--cc-danger); }
+
+/* Sel aksi pada tabel data master */
+.cc-row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--cc-space-2);
+}
+/* ==========================================================
+  Tahap 14: Halaman error
+   ========================================================== */
+
+.cc-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: var(--cc-space-6);
+}
+.cc-error__card {
+  width: 100%;
+  max-width: 32rem;
+  padding: var(--cc-space-8);
+  text-align: center;
+  background: var(--cc-surface);
+  border: 1px solid var(--cc-border);
+  border-radius: var(--cc-radius-lg);
+  box-shadow: var(--cc-shadow-card);
+}
+.cc-error__code {
+  margin: 0;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--cc-primary);
+}
+/* ==========================================================
+   Tahap 15: Perbaikan hasil review
+   ========================================================== */
+
+/* Teks panjang tanpa spasi (judul, lokasi, nama) dipatahkan agar tata letak tidak rusak */
+.cc-page h1,
+.cc-table td,
+.cc-table th,
+.cc-report-item,
+.cc-card,
+.cc-dl dd,
+.cc-timeline__note,
+.cc-alert,
+.cc-stat__label {
+  overflow-wrap: anywhere;
+}
